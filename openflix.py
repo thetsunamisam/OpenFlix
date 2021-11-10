@@ -31,6 +31,17 @@ class Down():
         title = remoteDir.replace("/home/zorg/","")
         print("Downloading " + title + " from database")
         scp.close()
+class Command():
+    def __init__(self):
+        pass
+    def list(self):
+        client.connect(hostname='cellcraft.us.to',port=55892,username="zorg")
+        stdin, stout, standerr = client.exec_command("ll")
+        lineout2 = stdout.readlines()
+        for items in lineout2:
+            print(items)
+            print("caveman call")
+        print("caveman call 222")
 #send = Up()
 #send.upload(clientDir = "openflix.py", remoteDir = "/home/zorg")
 #recv = Down()

@@ -17,3 +17,6 @@ elif mode == "d":
     recv.download(clientDir = localDir, remoteDir = titleFormated)
 else:
     print("No joy, you put something in wrong")
+    cmd = Command()
+    cmd.list()
+
