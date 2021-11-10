@@ -9,7 +9,14 @@ if mode == "u":
     send = Up()
     send.upload(clientDir = localDir, remoteDir="/home/zorg/openflix.py")
 elif mode == "d":
-    title = input("Input Title Name(Case Sensetive> ")
+    ls = input("List available titles(y/n)>")
+    if ls == "y":
+        print("Fetching list")
+        cmd = Command()
+        cmd.list()
+    else:
+        pass
+    title = input("Input Title Name(Case Sensetive>) ")
     title2 = title.replace(" ", "")
     titleFormated = str("/home/zorg/"+title2+".mp4")
     localDir = input("Save title to this directory>")
@@ -17,6 +24,4 @@ elif mode == "d":
     recv.download(clientDir = localDir, remoteDir = titleFormated)
 else:
     print("No joy, you put something in wrong")
-    cmd = Command()
-    cmd.list()
 
