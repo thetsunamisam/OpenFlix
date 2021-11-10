@@ -1,3 +1,5 @@
+NOTE TO LUKE: Im a badass who pushes main/master and has no other so dont expect this code to work 100%
+
 Welcome to Openflix by Sam Francis
 
 The only person who will read this is my brother, hi!
