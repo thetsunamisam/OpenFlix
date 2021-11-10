@@ -35,13 +35,17 @@ class Command():
     def __init__(self):
         pass
     def list(self):
+        print("test test")
+        client = SSHClient()
+        print("Loading Keys")
+        client.load_system_host_keys()
         client.connect(hostname='cellcraft.us.to',port=55892,username="zorg")
-        stdin, stout, standerr = client.exec_command("ll")
-        lineout2 = stdout.readlines()
-        for items in lineout2:
-            print(items)
-            print("caveman call")
-        print("caveman call 222")
+        print("Connected to " + ip)
+        stdin, stdout, standerr = client.exec_command("ls -l /media/zorg/'Big Chungus'/Movie_Database")
+        lineout = stdout.readlines()
+        for items in lineout:
+            print (items)
+
 #send = Up()
 #send.upload(clientDir = "openflix.py", remoteDir = "/home/zorg")
 #recv = Down()
