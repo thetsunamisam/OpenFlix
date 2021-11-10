@@ -11,6 +11,10 @@ TODO:
 	a. editing file name with out having to CLI ssh
 4. Add movie request file which should at a set time everyday try to
    download requested torrent
+   -OR-
+   Add way automatically send and download from magnetfile
+5. Automatically mount HDDs on server instead of requiring a separate
+   SSH login to mount HDDs
 
 Using the program:
 
@@ -24,4 +28,9 @@ Recieving Files form server:
 You may refernce file as case sesitive spaced text or as a direct file
 For example:
 "The Wolf Of Wall Street" is requested from the server as "WolfOfWallStreet.mp4"
+
+Known Issues:
+1. Using any form of cryptography other than RSA causes a hang
+2. Remote directory in rare occasions will default to remote home directory
+3. Connection will slow to ~100KB/s (Posssibly server-side issue)
 
