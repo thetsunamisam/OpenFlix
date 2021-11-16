@@ -37,7 +37,7 @@ class Command():
     def list(self):
         print("test test")
         client = SSHClient()
-        print("Loading Keys")
+        print("Loading Keys and mounting disks\nThe may take sometime if they arent spinning yet")
         client.load_system_host_keys()
         client.connect(hostname='cellcraft.us.to',port=55892,username="zorg")
         print("Connected to " + ip)
