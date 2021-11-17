@@ -27,7 +27,8 @@ class Down():
         pass
     def download(self, clientDir, remoteDir):
         scp = SCPClient(client.get_transport())
-        scp.get(remoteDir, local_path = clientDir, recursive=True)
+        remoteDirClean = remoteDir.replace(' ', '')
+        scp.get("/home/zorg/Movie_Database/Movie_Database/" + remoteDirClean+".mp4", local_path = clientDir, recursive=True)
         title = remoteDir.replace("/home/zorg/","")
         print("Downloading " + title + " from database")
         scp.close()
@@ -41,7 +42,7 @@ class Command():
         client.load_system_host_keys()
         client.connect(hostname='cellcraft.us.to',port=55892,username="zorg")
         print("Connected to " + ip)
-        stdin, stdout, standerr = client.exec_command("ls -l -h /media/zorg/'Big Chungus'/Movie_Database")
+        stdin, stdout, standerr = client.exec_command("ls -l -h /media/zorg/Big_Chungus/Movie_Database")
         lineout = stdout.readlines()
         for items in lineout:
             print (items)
