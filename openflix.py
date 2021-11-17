@@ -49,5 +49,5 @@ class Command():
 
 #send = Up()
 #send.upload(clientDir = "openflix.py", remoteDir = "/home/zorg")
-#recv = Down()
+#fgfjfgkfgkjfgkjgrecv = Down()
 #recv.download(clientDir = "/home/sam/Desktop", remoteDir = "/home/zorg/openflix.py")
