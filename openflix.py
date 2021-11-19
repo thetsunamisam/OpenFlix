@@ -42,11 +42,11 @@ class Command():
         client.load_system_host_keys()
         client.connect(hostname='cellcraft.us.to',port=55892,username="zorg")
         print("Connected to " + ip)
-        stdin, stdout, standerr = client.exec_command("ls -l -h /media/zorg/Big_Chungus/Movie_Database")
+        stdin, stdout, standerr = client.exec_command("ls -l -h /home/zorg/Movie_Database/Movie_Database/")
         lineout = stdout.readlines()
         for items in lineout:
             print (items)
-
+        return lineout
 #send = Up()
 #send.upload(clientDir = "openflix.py", remoteDir = "/home/zorg")
 #fgfjfgkfgkjfgkjgrecv = Down()
