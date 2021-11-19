@@ -34,8 +34,8 @@ def scan():
     titles = Label(scanbox, text=titleListClean)
     titles.pack()
     scanbox.mainloop()
-    print("debug22")
-    print(this22)
+    #print("debug22")
+    #print(this22)
     tk.messagebox.showinfo(root, message="Scan results are in the terminal output for now sorry")
 def close():
     exit()
