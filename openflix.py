@@ -47,7 +47,7 @@ class Command():
         for items in lineout:
             print (items)
         return lineout
-    def listupdate(self,self.rate):
+    def listupdate(self,rate):
         client = SSHClient()
         client.load_system_host_keys()
         client.connect(hostname='cellcraft.us.to', port=55892, username='zorg')
