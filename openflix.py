@@ -51,8 +51,4 @@ class Command():
         client = SSHClient()
         client.load_system_host_keys()
         client.connect(hostname='cellcraft.us.to', port=55892, username='zorg')
-        stdin, stdout, standerr = client.exe_command('while sleep 1; do ll -l -h/home/zorg/Movie_Database/Movie_Database/; done'
-#send = Up()
-#send.upload(clientDir = "openflix.py", remoteDir = "/home/zorg")
-#fgfjfgkfgkjfgkjgrecv = Down()
-#recv.download(clientDir = "/home/sam/Desktop", remoteDir = "/home/zorg/openflix.py")
+        stdin, stdout, standerr = client.exe_command('while sleep 1; do ll -l -h/home/zorg/Movie_Database/Movie_Database/; done')
