@@ -26,7 +26,14 @@ def getdir():
     return savedir
     print('Moving to save directory\n'+str(savedir)+ ('\n(In the future saving will not require moving the entire working directory!)'))
 def scan():
-    do.list()
+    titleList = do.list()
+    #preclean = titleList.replace("'","")
+    #titleListCleanSoon = preclean.replace("[","")
+    #titleListClean = titleListCleanSoon.replace("]","")
+    scanbox = Tk()
+    titles = Label(scanbox, text=titleList)
+    titles.pack()
+    scanbox.mainloop()
     tk.messagebox.showinfo(root, message="Scan results are in the terminal output for now sorry")
 def close():
     exit()
