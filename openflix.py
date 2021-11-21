@@ -1,3 +1,4 @@
+from threading import Thread
 import os
 import time
 import math
@@ -13,7 +14,7 @@ stdin, stdout, standerr = client.exec_command('ls')
 lineout = stdout.readlines()
 for items in lineout:
     print (items)
-class Up():
+class Up(Thread):
     def __init__(self):
         pass
     def upload(self, clientDir, remoteDir):

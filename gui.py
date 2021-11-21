@@ -1,3 +1,5 @@
+import os
+import subprocess
 from tkinter import *
 from openflix import *
 import openflix as flix
@@ -42,6 +44,7 @@ def start():
     rd = titleEntry.get()
     tk.messagebox.showinfo(root, message="After you close this window the download start.\nThis program only runs on one process so the program will appear to freeze\nthis is expected behaviour. When the download is finished another message will appear")
     flix.Down().download(os.getcwd(), rd)
+    root.after(1000, start)
     tk.messagebox.showinfo(root, message="Downloaded "+ rd + " to " + os.getcwd())
     print("if you get an error here you need to selelect a directory to save to")
 titleEntry = Entry(root)
