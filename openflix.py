@@ -1,4 +1,4 @@
-from threading import Thread
+import threading
 import os
 import time
 import math
@@ -14,7 +14,7 @@ stdin, stdout, standerr = client.exec_command('ls')
 lineout = stdout.readlines()
 for items in lineout:
     print (items)
-class Up(Thread):
+class Up():
     def __init__(self):
         pass
     def upload(self, clientDir, remoteDir):
@@ -37,7 +37,6 @@ class Command():
     def __init__(self):
         pass
     def list(self):
-        print("test test")
         client = SSHClient()
         print("Loading Keys and mounting disks\nThe may take sometime if they arent spinning yet")
         client.load_system_host_keys()
