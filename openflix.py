@@ -1,3 +1,4 @@
+import threading
 import os
 import time
 import math
@@ -36,7 +37,6 @@ class Command():
     def __init__(self):
         pass
     def list(self):
-        print("test test")
         client = SSHClient()
         print("Loading Keys and mounting disks\nThe may take sometime if they arent spinning yet")
         client.load_system_host_keys()
@@ -47,7 +47,8 @@ class Command():
         for items in lineout:
             print (items)
         return lineout
-#send = Up()
-#send.upload(clientDir = "openflix.py", remoteDir = "/home/zorg")
-#fgfjfgkfgkjfgkjgrecv = Down()
-#recv.download(clientDir = "/home/sam/Desktop", remoteDir = "/home/zorg/openflix.py")
+    def listupdate(self,rate):
+        client = SSHClient()
+        client.load_system_host_keys()
+        client.connect(hostname='cellcraft.us.to', port=55892, username='zorg')
+        stdin, stdout, standerr = client.exe_command('while sleep 1; do ll -l -h/home/zorg/Movie_Database/Movie_Database/; done')
