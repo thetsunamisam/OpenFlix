@@ -31,30 +31,28 @@ def getdir():
     print('Moving to save directory\n'+str(savedir)+ ('\n(In the future saving will not require moving the entire working directory!)'))
 def scan():
     titleList = do.list()
-    #preclean = titleList.replace("'","")
-    #titleListCleanSoon = preclean.replace("[","")
-    #titleListClean = titleListCleanSoon.replace("]","")
     scanbox = Tk()
     titles = Label(scanbox, text=titleList)
     titles.pack()
     scanbox.mainloop()
     tk.messagebox.showinfo(root, message="Scan results are in the terminal output for now sorry")
-def close():
-    exit()
-def start():
+def start1():
     print('starting transfer...')
     rd = titleEntry.get()
-    tk.messagebox.showinfo(root, message="After you close this window the download start.\nThis program only runs on one process so the program will appear to freeze\nthis is expected behaviour. When the download is finished another message will appear")
-    threading.Thread(target=flix.Down().download(os.getcwd(), rd),deamon=True).start()
-    root.after(1000, start)
+    #tk.messagebox.showinfo(root, message="After you close this window the download start.\nThis program only runs on one process so the program will appear to freeze\nthis is expected behaviour. When the download is finished another message will appear")
+    flix.Down().download(os.getcwd(), rd)
     tk.messagebox.showinfo(root, message="Downloaded "+ rd + " to " + os.getcwd())
     print("if you get an error here you need to selelect a directory to save to")
+def close():
+    exit()
+def foo():
+    print("hello")
 titleEntry = Entry(root)
 titleLabel = Label(root,text="Title\n(case sensitive)")
 browseButton = Button(root, text="Browse", command = getpath)
 saveButton =  Button(root,text="Save to", command=getdir)
 scanButton = Button(root, text='Scan', command=scan)
-startButton = Button(root, text='Start Download', bg="green", command=start)
+startButton = Button(root, text='Start Download', bg="green", command=start1)
 quit = Button(root, text= "Quit", command=close)
 titleLabel.pack()
 titleEntry.pack()
