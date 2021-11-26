@@ -4,11 +4,11 @@ import time
 import math
 from paramiko import *
 from scp import *
-ip  = "cellcraft.us.to" 
+hostname  = "cellcraft.us.to" 
 client = SSHClient()
 print("Loading Keys")
 client.load_system_host_keys()
-client.connect(hostname='cellcraft.us.to',port=55892,username="zorg")
+client.connect(hostname=hostname,port=55892,username="zorg")
 print("Connected to " + ip)
 stdin, stdout, standerr = client.exec_command('ls')
 lineout = stdout.readlines()
@@ -40,7 +40,7 @@ class Command():
         client = SSHClient()
         print("Loading Keys and mounting disks\nThe may take sometime if they arent spinning yet")
         client.load_system_host_keys()
-        client.connect(hostname='cellcraft.us.to',port=55892,username="zorg")
+        client.connect(hostname=hostname ,port=55892,username="zorg")
         print("Connected to " + ip)
         stdin, stdout, standerr = client.exec_command("ls -l -h /home/zorg/Movie_Database/Movie_Database/")
         lineout = stdout.readlines()
@@ -50,5 +50,13 @@ class Command():
     def listupdate(self,rate):
         client = SSHClient()
         client.load_system_host_keys()
-        client.connect(hostname='cellcraft.us.to', port=55892, username='zorg')
+        client.connect(hostname=hostname, port=55892, username='zorg')
         stdin, stdout, standerr = client.exe_command('while sleep 1; do ll -l -h/home/zorg/Movie_Database/Movie_Database/; done')
+class Debug():
+    def __init__(self):
+        pass
+    def probe(self):
+        client = SSHClient()
+        client.load_system_host_keys()
+        client.connect(hostname = hostname, port=port, username = username)
+        stdin, stdout, stdanderr = client.exe_command('./probe-test')
