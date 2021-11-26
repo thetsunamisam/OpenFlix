@@ -52,6 +52,10 @@ class Command():
         client.load_system_host_keys()
         client.connect(hostname='cellcraft.us.to', port=55892, username='zorg')
         stdin, stdout, standerr = client.exe_command('while sleep 1; do ll -l -h/home/zorg/Movie_Database/Movie_Database/; done')
+    def search(self):
+        client = SSHClient()
+        client.load_system_host_keys()
+        client.connect(hostname=hostname, 
 class Debug():
     def __init__(self):
         pass
@@ -60,3 +64,7 @@ class Debug():
         client.load_system_host_keys()
         client.connect(hostname = hostname, port=port, username = username)
         stdin, stdout, stdanderr = client.exe_command('./probe-test')
+    def netstat(self):
+        print("Running network tests...")
+        os.system('ping cellcraft.us.to:55892')
+      
