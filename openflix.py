@@ -67,5 +67,9 @@ class Debug():
         stdin, stdout, stdanderr = client.exe_command('./probe-test')
     def netstat(self):
         print("Running network tests...")
-        os.system('ping cellcraft.us.to:55892')
+        try:
+            os.system('ping ' ip +':55892')
+            print('Connection stable-ish')
+        except 
+        
       
