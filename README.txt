@@ -1,5 +1,10 @@
 NOTE TO LUKE: Im a badass who pushes main/master and has no other so dont expect this code to work 100%
 
+NOTE TO M1 USERS: its next to impossible to install any of the required packages using brew or pip3 M1
+breaks these things
+
+
+
 Welcome to Openflix by Sam Francis
 
 The only person who will read this is my brother, hi!

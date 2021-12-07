@@ -4,7 +4,8 @@ import time
 import math
 from paramiko import *
 from scp import *
-hostname  = "cellcraft.us.to" 
+hostname  ='10.0.0.126' 
+ip = hostname
 client = SSHClient()
 print("Loading Keys")
 client.load_system_host_keys()
@@ -55,7 +56,7 @@ class Command():
     def search(self):
         client = SSHClient()
         client.load_system_host_keys()
-        client.connect(hostname=hostname, 
+        client.connect(hostname=hostname) 
 class Debug():
     def __init__(self):
         pass
@@ -66,5 +67,9 @@ class Debug():
         stdin, stdout, stdanderr = client.exe_command('./probe-test')
     def netstat(self):
         print("Running network tests...")
-        os.system('ping cellcraft.us.to:55892')
+        try:
+            os.system('ping ' ip +':55892')
+            print('Connection stable-ish')
+        except 
+        
       
