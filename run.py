@@ -1,3 +1,9 @@
+'''to do
+add shell interface
+send
+revc
+list
+auto'''
 from openflix import *
 import openflix as flix
 from tkinter import *
