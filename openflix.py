@@ -68,8 +68,9 @@ class Debug():
     def netstat(self):
         print("Running network tests...")
         try:
-            os.system('ping ' ip +':55892')
+            os.system('ping '  + ip +':55892')
             print('Connection stable-ish')
-        except 
+        except:
+            pass
         
       
