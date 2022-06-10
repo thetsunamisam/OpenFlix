@@ -3,12 +3,14 @@ import os
 import time
 import math
 from paramiko import *
+import paramiko as paramiko
 from scp import *
-hostname  ='10.0.0.126' 
+hostname  ='76.117.71.27' 
 ip = hostname
 client = SSHClient()
 print("Loading Keys")
 client.load_system_host_keys()
+client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 client.connect(hostname=hostname,port=55892,username="zorg")
 print("Connected to " + ip)
 stdin, stdout, standerr = client.exec_command('ls')
